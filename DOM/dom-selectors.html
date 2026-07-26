@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="dom-selectors.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1 id="heading">Hello World</h1>
+    <h2 id="head2">Heading 2</h2>
+
+    <h1 id="myhead">My Boxes</h1>
+    <div class="container">
+        <div class="box">Box1</div>
+        <div class="box">Box2</div>
+        <div class="box">Box3</div>
+        <div class="box">Box4</div>
+    </div>
+
+    <div class="nothing ggs">This is a box</div>
+    <script>
+        // Selecting an id
+        let heading = document.getElementById("heading");
+        heading.innerHTML = "Heading CHanged";
+        console.log(heading);
+
+        let heading2 = document.getElementById("head2");
+        heading2.innerHTML= "<em> Hello</em>"
+
+        // Selecting element by class
+        let mybox = document.getElementsByClassName("box");
+        console.log(mybox[0]);
+        console.log(mybox[1]);
+        console.log(mybox[2]);
+        console.log(mybox[3]);
+
+        for(let b of mybox){
+            b.innerHTML = "Nothing";
+        }
+
+        for(let i =0; i<mybox.length;i++){
+            mybox[i].innerHTML = "Text entered with for loop"
+        }
+        
+        // Selecting element by tag name
+        let h = document.getElementsByTagName("h1");
+        h[0].innerHTML = "written with dom";
+
+        // Selecting a single element
+        let box = document.querySelector(".box");
+        box.style.backgroundColor = "crimson";
+        box.style.padding = "10px";
+        box.style.borderRadius = "20px";
+        console.log(box);
+
+        let head = document.querySelector("#myhead");
+        head.innerHTML = "changed with query selector";
+
+        // Selecting multiple elements
+        let bx = document.querySelectorAll(".box");
+        console.log(bx);
+
+        let no = document.querySelector(".nothing");
+        no.classList.add("http");
+        no.classList.remove("ggs");
+        no.classList.toggle("ggs");
+        console.log(no.classList);
+        console.log(no.classList.contains("nothng"));
+        
+    </script>
+</body>
+</html>
