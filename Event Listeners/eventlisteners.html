@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+    <style>
+        .box{
+            border: 2px solid green;
+            padding: 10px 20px;
+            display: inline;
+        }
+
+        .box2{
+            border: 2px solid green;
+            padding: 10px 20px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" id="my-btn">Click ME</button>
+
+    <br><br>
+
+    <form action="" id="form">
+        Name: <input type="text" name="" id="name">
+        <select name="" id="country">
+            <option value="pakistan">Pakistan</option>
+            <option value="india">India</option>
+            <option value="nepal">Nepal</option>
+        </select>
+        <button type="submit">Submit Now</button>
+    </form>
+
+    <br><br><br><br>
+
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box2">Box 2</div>
+    </div>
+    <script>
+        let btn = document.querySelector(".btn");
+        btn.addEventListener("click",(e)=>{
+            btn.style.backgroundColor = "red";
+            document.body.style.backgroundColor = "black";
+            btn.innerHTML = "The button has been clicked";
+            btn.style.padding = "10px 25px"
+            btn.style.marginTop = "100px"
+            console.log(e.target.id);
+            console.log(e.target.textContent);
+            
+        });
+
+
+        let name = document.getElementById("name");
+        name.addEventListener("input", ()=>{
+            console.log(name.value);
+        });
+        let country = document.querySelector("#country");
+        country.addEventListener("change",()=>{
+            console.log(country.value);
+            
+        });
+
+        let myform = document.querySelector("#form");
+        myform.addEventListener("submit", ()=>{
+            // e.preventDefault();
+            alert('For has been submitted');
+        });
+
+        document.addEventListener("keydown", (e)=>{
+            console.log(e.key);
+            
+        });
+
+        let mybox = document.querySelector(".box");
+        mybox.addEventListener("mouseover", ()=>{
+            mybox.innerHTML = "cursor is on the element";
+        });
+        mybox.addEventListener("mouseout", ()=>{
+            mybox.innerHTML = "cursor has left element";
+        });
+        
+        let mybox2 = document.querySelector(".box2");
+        mybox2.addEventListener("dblclick", ()=>{
+            mybox2.innerHTML = "You double clicked the element";
+        });
+
+    </script>
+</body>
+</html>
