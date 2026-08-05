@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map and Filter Practice</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+
+        // Printing items of array with for loop
+        for(let i =0;i<arr.length;i++){
+            console.log('With for Loop '+arr[i]);
+            
+        }
+        
+        // Printing items of array with forof loop
+        for(let val of arr){
+            console.log('With forof loop '+val);
+            
+        }
+
+        // Map
+        // doubles the value of array
+        let double = arr.map((a)=>{
+            return a*2;
+        });
+        console.log(double);
+        
+        
+        // squares the value of array
+        let square = arr.map((a)=>{
+            return a*a;
+        });
+        console.log(square);
+        
+        let names = ['talal', 'ali', 'hamza', 'ayyan'];
+
+        // converts the string to upper case
+        let upper = names.map((n)=>{
+            return n.toUpperCase();
+        }); 
+        console.log(upper);
+
+        // adds mr infront of the names
+        let add = names.map((str)=>{
+            return "Mr. "+str;
+        })
+        console.log(add);
+        
+        // Filter
+        let arr2 = [2,13,46,33,61,100,120,142,155,185,200];
+        let even = arr2.filter((a)=>{
+            return a % 2 ===0;
+        });
+        console.log(even);
+
+        let odd = arr2.filter((a)=>{
+            return a % 2 !== 0;
+        });
+        console.log(odd);
+
+        let gt = arr2.filter((a)=>{
+            return a >50;
+        });
+        console.log(gt);
+
+        let names2 = ['talal', 'ali', 'furqan', 'hamza', 'raza', 'murtaza'];
+        let no = names2.filter((n)=>{
+            return n.length >= 5;
+        });
+        console.log(no);
+
+        let std =[
+            {name: 'talal', age: 21},
+            {name: 'yasir', age: 34},
+            {name: 'ayesha', age: 12},
+            {name: 'fiza', age: 22},
+            {name: 'sohaib', age: 7},
+            {name: 'saad', age:16},
+        ];
+
+        // prints the names
+        let nme = std.map((st)=>{
+            return st.name;
+        });
+        console.log(nme);
+        
+        // prints the age
+        let ag = std.map((st)=>{
+            return st.age+5;
+        });
+        console.log(ag);
+        
+        // filters the objects who are adults
+        let adult = std.filter((st)=>{
+            return st.age >= 18;
+        });
+        // console.log(adult);
+
+        let adnam = adult.map((an)=>{
+            return an.name;
+        });
+
+        console.log("The names of the adults "+adnam);
+
+
+        let products = [
+            {name: 'keyboard', price: 12000},
+            {name: 'mouse', price: 5000},
+            {name: 'usb', price: 1200},
+            {name: 'mouse-pad', price: 800},
+            {name: 'monitor', price: 15000}
+        ];
+        
+        let sp = products.filter((p)=>{
+            return p.price <=6000;
+        }).map((p)=>{
+            return p.name;
+        });
+
+        console.log(sp);
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
